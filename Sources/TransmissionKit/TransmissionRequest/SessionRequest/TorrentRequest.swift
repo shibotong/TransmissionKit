@@ -22,7 +22,7 @@ enum TorrentMethod: String {
 }
 
 extension TransmissionRequest {
-    static func torrent(method: TorrentMethod, arguments: [String: [String]], tag: Int? = nil) -> TransmissionRequest {
+    static func torrent(method: TorrentMethod, arguments: [String: [Any]], tag: Int? = nil) -> TransmissionRequest {
         TransmissionRequest(method: "torrent-\(method.rawValue)", arguments: arguments, tag: tag)
     }
 }

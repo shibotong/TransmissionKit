@@ -10,7 +10,7 @@ import Foundation
 public struct TransmissionRequest {
     
     let method: String
-    let arguments: [String: [String]]
+    let arguments: [String: [Any]]
     let tag: Int?
     
     public var jsonBody: [String: Any] {
@@ -24,7 +24,7 @@ public struct TransmissionRequest {
         return json
     }
     
-    init(method: String, arguments: [String : [String]] = [:], tag: Int? = nil) {
+    init(method: String, arguments: [String : [Any]] = [:], tag: Int? = nil) {
         self.method = method
         self.arguments = arguments
         self.tag = tag
