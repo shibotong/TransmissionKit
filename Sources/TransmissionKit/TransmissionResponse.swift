@@ -9,10 +9,10 @@ import Foundation
 
 public struct TransmissionResponse {
     
-    let arguments: [String: Any]
-    let result: String
+    public let arguments: [String: Any]
+    public let result: String
     
-    var isSuccess: Bool {
+    public var isSuccess: Bool {
         return result == "success"
     }
 }

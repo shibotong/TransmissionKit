@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum TransmissionError: Error {
+public enum TransmissionError: Error {
     case noURL
     case unauthorized
     case notJSON

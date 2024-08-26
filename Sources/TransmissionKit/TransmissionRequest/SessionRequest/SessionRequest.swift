@@ -7,12 +7,12 @@
 
 import Foundation
 
-enum SessionMethod: String {
+public enum SessionMethod: String {
     case get, set
 }
 
 extension TransmissionRequest {
-    static func session(method: SessionMethod, arguments: [String: [String]], tag: Int? = nil) -> TransmissionRequest {
+    public static func session(method: SessionMethod, arguments: [String: [String]], tag: Int? = nil) -> TransmissionRequest {
         TransmissionRequest(method: "session-\(method.rawValue)", arguments: arguments, tag: tag)
     }
 }

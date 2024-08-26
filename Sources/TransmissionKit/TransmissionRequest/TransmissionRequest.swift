@@ -24,7 +24,7 @@ public struct TransmissionRequest {
         return json
     }
     
-    init(method: String, arguments: [String : [Any]] = [:], tag: Int? = nil) {
+    public init(method: String, arguments: [String : [Any]] = [:], tag: Int? = nil) {
         self.method = method
         self.arguments = arguments
         self.tag = tag

@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum TorrentMethod: String {
+public enum TorrentMethod: String {
     case start
     case startNow = "start-now"
     case stop
@@ -22,7 +22,7 @@ enum TorrentMethod: String {
 }
 
 extension TransmissionRequest {
-    static func torrent(method: TorrentMethod, arguments: [String: [Any]], tag: Int? = nil) -> TransmissionRequest {
+    public static func torrent(method: TorrentMethod, arguments: [String: [Any]], tag: Int? = nil) -> TransmissionRequest {
         TransmissionRequest(method: "torrent-\(method.rawValue)", arguments: arguments, tag: tag)
     }
 }
