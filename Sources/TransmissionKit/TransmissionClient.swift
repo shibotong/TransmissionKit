@@ -31,7 +31,7 @@ public class TransmissionClient {
         }
     }
     
-    public func queryServer(request: TransmissionRequest) async throws -> TransmissionResponse {
+    public func request(_ request: TransmissionRequest) async throws -> TransmissionResponse {
         guard let url else {
             throw TransmissionError.noURL
         }
@@ -63,7 +63,7 @@ public class TransmissionClient {
             case 409:
                 if let sessionID = httpResponse.allHeaderFields[Self.sessionIDHeader] as? String {
                     self.sessionID = sessionID
-                    return try await queryServer(request: request)
+                    return try await self.request(request)
                 } else {
                     throw TransmissionError.unknown
                 }
